@@ -29,4 +29,32 @@ let decoder2 = code => {
     return decodedWord;
 }
 
-console.log(decoder2('0y4akjfe0s'));
+//console.log(decoder2('0y4akjfe0s'));
+
+const decoder3 = (str) => {
+    index = 1
+    for(i in str){
+        turntoNum = Number(str[i])
+        if(Number.isInteger(turntoNum)){
+            index += turntoNum
+            console.log(str[index])
+            index += 2
+        }
+    }
+}
+
+    console.log(decoder3('0y4akjfe0s'));
+
+    const decoder4 = (code) => {
+        let splitStr = code.split("");
+        let result = "";
+      
+        for(let i = 0; i < splitStr.length; i++) {
+          if(!isNaN(+splitStr[i])) {
+            i += +splitStr[i];
+          } else {
+            result += splitStr[i];
+          }
+        }
+        return result;
+      }
