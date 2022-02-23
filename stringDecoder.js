@@ -5,6 +5,7 @@ let decoder = code => {
         //if the code[i] is a number
         if(!(isNaN(code[i]))){
             //set the skipNum
+            //add the targeted char to decodedWord
             let skipNum = parseInt(code[i]) + 1;
             decodedWord += code[i + skipNum];
         }
@@ -19,10 +20,11 @@ let decoder2 = code => {
     for(let i = 1; i < code.length; i++){
         //if the code[i] is a number
         if(!(isNaN(code[i]))){
-            //set the skipNum
+            //add a char right in front of a number
             decodedWord += code[i - 1];
         }
     }
+    //add the last char
     decodedWord += code[code.length - 1];
     return decodedWord;
 }
